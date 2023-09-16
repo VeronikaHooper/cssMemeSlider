@@ -7,6 +7,8 @@
 body {
     overflow-x: hidden;
     margin: 0;
+    background-color: black;
+
 }
 
 .container {
@@ -16,8 +18,8 @@ body {
 }
 
 .slider {
-    width: 900px;
-    height: 600px;
+    width: 400px;
+    height: 300px;
     border-radius: 10%;
     overflow: hidden;
 }
@@ -29,11 +31,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.text {}
+
 .navigation {
     position: absolute;
-    bottom: 0px;
-    left: 100%;
-    transform: translateX(-50%);
+    bottom: 10px;
+    right: 20px;
     display: flex;
 }
 
@@ -51,18 +54,18 @@ body {
 
 .bar:hover {
     opacity: 1;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     transform: scale(1.1);
-}
-
-.bar:active {
-    background-color: none;
-    border-radius: #fff;
 }
 
 input[name="r"] {
     position: absolute;
     visibility: hidden;
+}
+
+input[type="radio"]:checked+.bar {
+    background-color: transparent;
+    border: 3px solid rgb(255, 255, 255);
 }
 
 .slides {
@@ -74,6 +77,7 @@ input[name="r"] {
 .slide {
     width: 25%;
     transition: all .6s ease;
+    color: aliceblue;
 }
 
 .slide img {
@@ -82,18 +86,18 @@ input[name="r"] {
     object-fit: cover;
 }
 
-#r1:checked~.s1 {
+body:has(#r1:checked) .s1 {
     margin-left: 0;
 }
 
-#r2:checked~.s1 {
+body:has(#r2:checked) .s1 {
     margin-left: -25%;
 }
 
-#r3:checked~.s1 {
+body:has(#r3:checked) .s1 {
     margin-left: -50%;
 }
 
-#r4:checked~.s1 {
+body:has(#r4:checked) .s1 {
     margin-left: -75%;
 }
