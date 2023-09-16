@@ -1,0 +1,99 @@
+* {
+
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.slider {
+    width: 900px;
+    height: 600px;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0px;
+    left: 100%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 6px;
+    cursor: pointer;
+    background-color: rgb(90, 90, 252);
+    border-radius: 10px;
+    transition: all .4s ease;
+
+}
+
+.bar:hover {
+    opacity: 1;
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.bar:active {
+    background-color: none;
+    border-radius: #fff;
+}
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 25%;
+    transition: all .6s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#r1:checked~.s1 {
+    margin-left: 0;
+}
+
+#r2:checked~.s1 {
+    margin-left: -25%;
+}
+
+#r3:checked~.s1 {
+    margin-left: -50%;
+}
+
+#r4:checked~.s1 {
+    margin-left: -75%;
+}
